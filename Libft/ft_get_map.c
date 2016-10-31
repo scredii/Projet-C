@@ -6,7 +6,7 @@
 /*   By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/25 12:19:43 by ddufour           #+#    #+#             */
-/*   Updated: 2016/06/25 17:00:06 by ddufour          ###   ########.fr       */
+/*   Updated: 2016/10/29 17:06:41 by ddufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,22 @@ char	*ft_get_map(char *av)
 	int		ret;
 	int		fd;
 	char	*map;
-	char	buff[BUFF_SIZE + 1];
+	char	*buff;
 
 	if (!(map = (char*)ft_memalloc(sizeof(char) * 1)))
 		return (NULL);
 	if ((fd = open(av, O_RDONLY)) == -1)
 		return (NULL);
-	while ((ret = read(fd, buff, BUFF_SIZE)) != 0)
+	while ((ret = get_next_line(fd, &buff)) > 0)
 	{
-		buff[ret] = '\0';
-		if (!(map = ft_strjoin(map, buff)))
+		if (!(map = ft_strjoinfree(map, buff)))
 			return (NULL);
+		if (!(map = ft_strjoinfree(map, "\n")))
+			return (NULL);
+		free(buff);
 	}
+	if (ret == -1)
+		return (NULL);
 	close(fd);
 	return (map);
 }

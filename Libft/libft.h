@@ -6,7 +6,7 @@
 /*   By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/24 17:22:34 by ddufour           #+#    #+#             */
-/*   Updated: 2016/06/25 16:58:23 by ddufour          ###   ########.fr       */
+/*   Updated: 2016/10/12 12:53:41 by ddufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,18 @@
 
 typedef struct		s_list
 {
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+}						t_list;
+
+typedef struct			s_content
+{
+    char				*content;
+    int					file_descriptor;
+    int					retour;
+    struct s_content	*next;
+}						t_content;
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -52,6 +60,7 @@ int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
+int					ft_ishexa(char c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
@@ -69,6 +78,8 @@ char				*ft_strmapi(char const *s,
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s,
+								unsigned int start, size_t len);
+char				*ft_strsubfree(char *s,
 								unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
@@ -89,9 +100,14 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 char				*ft_itoa_base(int n, int base);
-void				ft_free_tab(char **tab);
+char				*ft_strndup(const char *s1, size_t n);
+void				ft_free_tab(char ***tab);
 char				*ft_get_map(char *av);
 void				ft_lstputendl(t_list *lst);
 void				ft_print_tab(char **tab);
+char				*ft_strjoinfree(char const *s1, char const *s2);
+int					get_next_line(const int fd, char **line);
+char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
+int					ft_count_word_line(char *line, char split);
 
 #endif

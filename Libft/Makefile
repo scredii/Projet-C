@@ -1,3 +1,4 @@
+
 #******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -6,7 +7,7 @@
 #    By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/24 17:19:40 by ddufour           #+#    #+#              #
-#    Updated: 2016/06/25 16:47:07 by ddufour          ###   ########.fr        #
+#    Updated: 2016/10/12 12:54:19 by ddufour          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -57,6 +58,7 @@ SRC =	ft_atoi.c \
 		ft_memcpy.c \
 		ft_strdup.c \
 		ft_strsub.c \
+		ft_strsubfree.c \
 		ft_memdel.c \
 		ft_strequ.c \
 		ft_strtrim.c \
@@ -74,11 +76,17 @@ SRC =	ft_atoi.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		ft_strndup.c \
 		ft_free_tab.c \
 		ft_get_map.c \
 		ft_lstputendl.c \
 		ft_print_tab.c \
-		ft_itoa_base.c
+		ft_itoa_base.c \
+		ft_strjoinfree.c \
+		get_next_line.c \
+		ft_convert_base.c \
+		ft_count_word_line.c \
+		ft_ishexa.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,18 +6,18 @@
 /*   By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/25 11:24:51 by ddufour           #+#    #+#             */
-/*   Updated: 2016/06/25 12:00:19 by ddufour          ###   ########.fr       */
+/*   Updated: 2016/10/12 13:11:22 by ddufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_tab(char **tab)
+void	ft_free_tab(char ***tab)
 {
 	int	a;
 
 	a = -1;
-	while (tab[++a])
-		free(tab[a]);
-	free(tab);
+	while ((*tab)[++a])
+		free((*tab)[a]);
+	free((*tab));
 }
