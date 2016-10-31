@@ -6,7 +6,7 @@
 #    By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/12 17:05:44 by ddufour           #+#    #+#              #
-#    Updated: 2016/10/31 17:05:32 by ddufour          ###   ########.fr        #
+#    Updated: 2016/10/31 17:19:49 by ddufour          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,12 +26,16 @@ OBJ = $(SRCS:.c=.o)
 
 $(NAME) : $(OBJ)
 	@echo
-	@echo "\o/\o/\o/\o/   \o/\o/\o/       \o/\o/\o/\o/"
-	@echo "\o/            \o/      \o/    \o/         "
-	@echo "\o/\o/\o/      \o/      \o/    \o/\o/\o/   "
-	@echo "\o/            \o/      \o/    \o/         "
-	@echo "\o/            \o/      \o/    \o/         "
-	@echo "\o/            \o/\o/\o/       \o/         "
+	@echo "\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/"
+	@echo "\o/                                                \o/"
+	@echo "\o/   \o/\o/\o/\o/   \o/\o/\o/      \o/\o/\o/\o/   \o/"
+	@echo "\o/   \o/            \o/      \o/   \o/            \o/"
+	@echo "\o/   \o/\o/\o/      \o/      \o/   \o/\o/\o/      \o/"
+	@echo "\o/   \o/            \o/      \o/   \o/            \o/"
+	@echo "\o/   \o/            \o/      \o    \o/            \o/"
+	@echo "\o/   \o/            \o/\o/\o/      \o/            \o/"
+	@echo "\o/                                                \o/"
+	@echo "\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/\o/"
 	@echo
 	@make -s -C libs/libft
 	@echo "Libft Compiled"
