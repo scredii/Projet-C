@@ -6,7 +6,7 @@
 /*   By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 14:14:55 by ddufour           #+#    #+#             */
-/*   Updated: 2016/10/31 12:16:37 by ddufour          ###   ########.fr       */
+/*   Updated: 2016/10/31 15:48:50 by ddufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,4 +120,5 @@ void get_pos(t_lstmap *cpy1, t_lstmap *cpy2, t_database *info_map)
 	if (X1 > 0 && Y1 > 0 && X1 < WIDTH && Y1 < HEIGHT && X2 > 0 && Y2 > 0 &&
 		X2 < WIDTH && Y2 < HEIGHT)
 		launch_algo(info_map, ((cpy1->z > cpy2->z) ? cpy1->z : cpy2->z) * MODZ);
+	free(info_map->position);
 }

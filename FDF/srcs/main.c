@@ -6,7 +6,7 @@
 /*   By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/28 13:00:25 by ddufour           #+#    #+#             */
-/*   Updated: 2016/10/31 12:17:43 by ddufour          ###   ########.fr       */
+/*   Updated: 2016/10/31 16:18:37 by ddufour          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,8 @@ static int	key_fonc(int key_code, t_database *info_map)
 int	main(int ac, char **av)
 {
 	t_database *info_map;
-
+	if (ac != 2)
+		return (0);
 	if (!(info_map = creat_tab(av[1])))
 		return (0);
 	mlx_loop_hook(MLX, fdf, info_map);

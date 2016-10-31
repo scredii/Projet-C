@@ -6,7 +6,7 @@
 #    By: ddufour <ddufour@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/12 17:05:44 by ddufour           #+#    #+#              #
-#    Updated: 2016/10/31 11:05:37 by ddufour          ###   ########.fr        #
+#    Updated: 2016/10/31 17:05:32 by ddufour          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -25,20 +25,40 @@ SRCS =	srcs/bresenham.c \
 OBJ = $(SRCS:.c=.o)
 
 $(NAME) : $(OBJ)
+	@echo
+	@echo "\o/\o/\o/\o/   \o/\o/\o/       \o/\o/\o/\o/"
+	@echo "\o/            \o/      \o/    \o/         "
+	@echo "\o/\o/\o/      \o/      \o/    \o/\o/\o/   "
+	@echo "\o/            \o/      \o/    \o/         "
+	@echo "\o/            \o/      \o/    \o/         "
+	@echo "\o/            \o/\o/\o/       \o/         "
+	@echo
 	@make -s -C libs/libft
+	@echo "Libft Compiled"
 	@make -s -C libs/minilibx_macos
-	$(CCF) $(LIBS) -lft -lmlx -framework OpenGL -framework AppKit -o $@ $^
+	@echo "Minilibx Compiled"
+	@$(CCF) $(LIBS) -lft -lmlx -framework OpenGL -framework AppKit -o $@ $^
+	@echo "Fdf Compiled"
 
 all : $(NAME)
 
+%.o: %.c
+	@$(CCF) -o $@ -c $<
+
 clean :
-	make clean -C libs/libft
-	make clean -C libs/minilibx_macos
-	$(RM) $(OBJ)
+	@make clean -s -C libs/libft
+	@echo ".o Libft delete"
+	@make clean -s -C libs/minilibx_macos
+	@echo ".o Minilibx delete"
+	@$(RM) $(OBJ)
+	@echo ".o Fdf delete"
 
 fclean : clean
-	$(RM) libs/libft/libft.a
-	$(RM) libs/minilibx_macos/libmlx.a
-	$(RM) $(NAME)
+	@$(RM) libs/libft/libft.a
+	@echo "libft.a delete"
+	@$(RM) libs/minilibx_macos/libmlx.a
+	@echo "libmlx.a delete"
+	@$(RM) $(NAME)
+	@echo "fdf delete"
 
 re : fclean all
