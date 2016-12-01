@@ -1,7 +1,0 @@
-Credentials cache: API:16123
-        Principal: ddufour@42.FR
-
-  Issued                Expires               Principal
-Oct 15 16:57:08 2015  Oct 16 02:57:08 2015  krbtgt/42.FR@42.FR
-Oct 15 17:00:52 2015  Oct 16 02:57:08 2015  host/vogsphere-frontend-normal-1.42.fr@42.FR
-Oct 15 17:08:07 2015  Oct 16 02:57:08 2015  ldap/ldap-proxy.42.fr@42.FR
